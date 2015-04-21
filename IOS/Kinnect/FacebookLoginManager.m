@@ -41,7 +41,7 @@ RCT_EXPORT_METHOD(newSession:(RCTResponseSenderBlock)callback) {
               NSString *userEmail = result[@"email"];
               NSDictionary *credentials = @{
                 @"token" : tokenString,
-                @"tokenExperation" : experationDate,
+                @"tokenExperation" : expirationDate,
                 @"userId" : userId,
                 @"userName": userName,
                 @"userEmail": userEmail

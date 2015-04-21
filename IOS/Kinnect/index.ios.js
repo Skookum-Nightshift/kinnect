@@ -9,8 +9,11 @@ var {
   StyleSheet,
   Text,
   View,
-  TouchableHighlight
+  TouchableHighlight,
+  AsyncStorage
 } = React;
+
+var Utils = require('./lib/utils');
 
 var FacebookLoginManager = require('NativeModules').FacebookLoginManager;
 
@@ -26,8 +29,21 @@ var Kinnect = React.createClass({
       if (error) {
         this.setState({result: error});
       } else {
-        console.log(info);
-        this.setState({result: info});
+        var data = { id: info.id, expirationDate: info.expirationDate };
+        AsyncStorage.setItem("user", JSON.stringify(data))
+        .then(() => {
+          var data = { user: {} };
+          data.user.email =  info.userEmail;
+          data.user.name = info.userName;
+          data.user.token = info.token;
+          data.user.id = info.userId;
+
+          Utils.postRequest('users/sign_in', data, () => {
+            this.setState({result: "signed in"});
+          });
+        })
+        .catch((error) => { this.setState({result: "Error while loging in"}); })
+        .done();
       }
     });
   },
