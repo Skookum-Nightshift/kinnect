@@ -36,7 +36,7 @@ var Kinnect = React.createClass({
       <View style={styles.container}>
         <View style={styles.box}>
         <Image
-          source={{uri:'/Users/create/Desktop/Skookum_Nightshift/kinnect_git/IOS/Kinnect/iOS/Images.xcassets/kinnect.svg'}}
+          source={require('image!logo')}
           style={styles.image}/>
           <Text style={styles.kinnect}>
           KINNECT
