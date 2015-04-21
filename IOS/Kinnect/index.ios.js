@@ -36,7 +36,7 @@ var Kinnect = React.createClass({
       <View style={styles.container}>
         <View style={styles.box}>
         <Image
-          source={require('image!logo')}
+          source={require('image!Icon')}
           style={styles.image}/>
           <Text style={styles.kinnect}>
           KINNECT
