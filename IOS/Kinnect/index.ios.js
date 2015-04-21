@@ -11,10 +11,7 @@ var {
   Text,
   View,
   TouchableHighlight,
-<<<<<<< HEAD
   AsyncStorage
-=======
->>>>>>> b92130ac4ab787178adc9c4e68e4a5a0a27d3f8b
 } = React;
 
 var Utils = require('./lib/utils');
