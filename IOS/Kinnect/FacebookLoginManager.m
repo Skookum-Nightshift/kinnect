@@ -35,7 +35,7 @@ RCT_EXPORT_METHOD(newSession:(RCTResponseSenderBlock)callback) {
               [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS"];
 
               NSString *tokenString = token.tokenString;
-              NSString *experationDate = [dateFormat stringFromDate:token.expirationDate];
+              NSString *expirationDate = [dateFormat stringFromDate:token.expirationDate];
               NSString *userId = token.userID;
               NSString *userName = result[@"name"];
               NSString *userEmail = result[@"email"];
