@@ -31,12 +31,17 @@ RCT_EXPORT_METHOD(newSession:(RCTResponseSenderBlock)callback) {
               callback(@[@"Error", [NSNull null]]);
             } else {
 //              NSLog(@"fetched user:%@", result);
+              NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+              [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS"];
+
               NSString *tokenString = token.tokenString;
+              NSString *expirationDate = [dateFormat stringFromDate:token.expirationDate];
               NSString *userId = token.userID;
               NSString *userName = result[@"name"];
               NSString *userEmail = result[@"email"];
               NSDictionary *credentials = @{
                 @"token" : tokenString,
+                @"tokenExperation" : experationDate,
                 @"userId" : userId,
                 @"userName": userName,
                 @"userEmail": userEmail
