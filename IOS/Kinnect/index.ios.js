@@ -13,6 +13,7 @@ var {
   TouchableHighlight,
 } = React;
 
+var LinearGradient = require('react-native-linear-gradient');
 var FacebookLoginManager = require('NativeModules').FacebookLoginManager;
 
 var Kinnect = React.createClass({
@@ -35,18 +36,20 @@ var Kinnect = React.createClass({
     return (
       <View style={styles.container}>
         <View style={styles.box}>
-        <Image
-          source={require('image!Icon')}
-          style={styles.image}/>
+          <Image
+            source={require('image!Icon')}
+            style={styles.image}/>
           <Text style={styles.kinnect}>
-          KINNECT
+            KINNECT
           </Text>
           <Text style={styles.welcome}>
-          {JSON.stringify(this.state.result)}
-        </Text>
-        <TouchableHighlight onPress={this.login} style={styles.login} >
-          <Text style={styles.text}>Login with Facebook</Text>
-        </TouchableHighlight>
+            {JSON.stringify(this.state.result)}
+          </Text>
+          <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.login}>
+            <TouchableHighlight onPress={this.login}>
+              <Text style={styles.loginText}>Login with Facebook</Text>
+            </TouchableHighlight>
+          </LinearGradient>
         </View>
       </View>
     );
@@ -54,9 +57,22 @@ var Kinnect = React.createClass({
 });
 
 var styles = StyleSheet.create({
-  image:{
+  login: {
+    paddingVertical: 5,
+    paddingHorizontal: 15,
+    borderRadius: 5,
     borderWidth: 0.25,
     borderColor:'#FFFFFF',
+    alignSelf: 'center',
+    alignItems: 'center',
+    height: 50,
+    width: 100,
+  },
+  loginText: {
+    textAlign:'center',
+    color:'#FFFFFF',
+  },
+  image:{
     position: 'relative',
     width: 40,
     height: 40,
@@ -96,14 +112,6 @@ var styles = StyleSheet.create({
     textAlign: 'center',
     color: '#FFFFFF',
     marginBottom: 5,
-  },
-  login:{
-    borderWidth: 0.25,
-    borderColor:'#FFFFFF',
-    alignSelf: 'center',
-    height: 50,
-    width: 100,
-    padding: 5,
   },
   text:{
     textAlign:'center',
