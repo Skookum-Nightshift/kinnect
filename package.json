@@ -4,6 +4,7 @@
   "dependencies": {
     "browserify": "~> 6.3",
     "browserify-incremental": "^1.4.0",
+    "react-native": "^0.4.0",
     "react-native-facebook-login": "^0.4.0"
   },
   "license": "MIT",
