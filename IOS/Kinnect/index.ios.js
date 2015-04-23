@@ -11,6 +11,7 @@ var {
   Text,
   View,
   TouchableHighlight,
+  TextInput,
 } = React;
 
 var LinearGradient = require('react-native-linear-gradient');
@@ -34,7 +35,7 @@ var Kinnect = React.createClass({
   },
   render: function() {
     return (
-      <View style={styles.container}>
+      <LinearGradient colors={['#0ba0d3', '#0774b7', '#023692']} style={styles.container}>
         <View style={styles.box}>
           <Image
             source={require('image!Icon')}
@@ -51,7 +52,7 @@ var Kinnect = React.createClass({
             </TouchableHighlight>
           </LinearGradient>
         </View>
-      </View>
+      </LinearGradient>
     );
   }
 });
@@ -71,11 +72,12 @@ var styles = StyleSheet.create({
   loginText: {
     textAlign:'center',
     color:'#FFFFFF',
+    fontFamily:'Avenir'
   },
   image:{
     position: 'relative',
-    width: 40,
-    height: 40,
+    width: 50,
+    height: 50,
     alignSelf:'center',
     opacity: 100,
   },
@@ -85,13 +87,12 @@ var styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#000FFF',
   },
   box:{
     borderBottomWidth: 0.25,
     borderTopWidth: 0.25,
     borderColor: '#FFFFFF',
-    height: 300,
+    height: 200,
     justifyContent: 'center',
     padding: 25,
   },
@@ -101,9 +102,11 @@ var styles = StyleSheet.create({
     margin: 10,
     fontWeight: 'bold',
     color: '#FFFFFF',
+    fontFamily: 'Avenir'
   },
   kinnect: {
-    fontFamily: 'Futura',
+    fontFamily: 'Avenir',
+    fontWeight: 'bold',
     textAlign: 'center',
     fontSize: 10,
     color: '#FFFFFF',
