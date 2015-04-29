@@ -39,7 +39,7 @@ var Kinnect = React.createClass({
         <View style={styles.box}>
           <Image
             source={require('image!Icon')}
-            style={styles.image}/>
+            style={styles.icon}/>
           <Text style={styles.kinnect}>
             KINNECT
           </Text>
@@ -58,6 +58,13 @@ var Kinnect = React.createClass({
 });
 
 var styles = StyleSheet.create({
+  container: {
+    borderWidth: 0.25,
+    borderColor: '#FFFFFF',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   login: {
     paddingVertical: 5,
     paddingHorizontal: 15,
@@ -66,38 +73,28 @@ var styles = StyleSheet.create({
     borderColor:'#FFFFFF',
     alignSelf: 'center',
     alignItems: 'center',
-    height: 50,
-    width: 100,
+    height: 35,
+    width: 200,
   },
   loginText: {
     textAlign:'center',
     color:'#FFFFFF',
     fontFamily:'Avenir'
   },
-  image:{
+  icon:{
     position: 'relative',
-    width: 50,
-    height: 50,
+    width: 60,
+    height: 60,
     alignSelf:'center',
-    opacity: 100,
-  },
-  container: {
-    borderWidth: 0.25,
-    borderColor: '#FFFFFF',
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  box:{
-    borderBottomWidth: 0.25,
-    borderTopWidth: 0.25,
-    borderColor: '#FFFFFF',
-    height: 200,
-    justifyContent: 'center',
+    opacity: 50,
     padding: 25,
+    borderRadius: 15,
+    borderWidth: 0.5,
+    borderColor: 'white',
   },
+
   welcome: {
-    fontSize: 10,
+    fontSize: 12,
     textAlign: 'center',
     margin: 10,
     fontWeight: 'bold',
@@ -108,10 +105,11 @@ var styles = StyleSheet.create({
     fontFamily: 'Avenir',
     fontWeight: 'bold',
     textAlign: 'center',
-    fontSize: 10,
+    fontSize: 14,
     color: '#FFFFFF',
+    padding: 10,
   },
-  instructions: {
+  instruct: {
     textAlign: 'center',
     color: '#FFFFFF',
     marginBottom: 5,

@@ -22,7 +22,10 @@ var Kinnect = React.createClass({
           <Image
             source={require('image!Icon')}
             style={styles.icon}/>
-              <View style={styles.email}>
+              <View>
+                <Text style={styles.instruct}>Enter your recipient emails below.</Text>
+              </View>
+                <View style={styles.email}>
                 <Text style={styles.text}>Email 1</Text>
                   <TextInput style={styles.input}
                   onChangeText={(text) => this.setState({input: text})}
@@ -60,20 +63,21 @@ var Kinnect = React.createClass({
 
 var styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection: 'column',
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: 'flex-start',
+    padding: 50,
   },
   icon:{
     position: 'relative',
-    width: 75,
-    height:75,
+    width: 60,
+    height: 60,
     alignSelf:'center',
     opacity: 50,
     padding: 25,
+    borderRadius: 15,
+    borderWidth: 0.5,
+    borderColor: 'white',
   },
   submit: {
     paddingVertical: 1,
@@ -85,7 +89,6 @@ var styles = StyleSheet.create({
     width: 100,
   },
   email: {
-    flex: 2,
     alignSelf: 'center',
     height: 75,
     padding: 20,
@@ -93,6 +96,7 @@ var styles = StyleSheet.create({
     buttons:{
       alignSelf: 'flex-end',
       padding: 10,
+      flex: 3,
   },
   input: {
     height: 40,
@@ -101,6 +105,13 @@ var styles = StyleSheet.create({
     borderWidth: 0.3,
     opacity: .5,
   },
+  instruct: {
+    fontFamily: 'Avenir',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    fontSize: 12,
+    color: '#FFFFFF',
+  },
   text: {
     fontFamily: 'Avenir',
     fontWeight: 'bold',
@@ -108,7 +119,6 @@ var styles = StyleSheet.create({
     fontSize: 12,
     color: '#FFFFFF',
     justifyContent: 'center',
-    alignItems: 'flex-start',
   },
   login: {
     fontFamily: 'Avenir',
