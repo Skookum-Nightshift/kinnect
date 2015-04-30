@@ -97,13 +97,15 @@ var styles = StyleSheet.create({
       alignSelf: 'flex-end',
       padding: 10,
       flex: 3,
+      height: 5,
   },
   input: {
+    backgroundColor:'white',
     height: 40,
-    width: 200,
+    width: 300,
     borderColor: 'white',
     borderWidth: 0.3,
-    opacity: .5,
+    opacity: .25,
   },
   instruct: {
     fontFamily: 'Avenir',
@@ -111,6 +113,7 @@ var styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 12,
     color: '#FFFFFF',
+    padding: 25,
   },
   text: {
     fontFamily: 'Avenir',
