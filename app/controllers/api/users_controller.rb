@@ -22,6 +22,24 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def add_recipients
+    message = 'Recipients added successfully'
+    user = User.where(uuid: user_params[:id]).first
+    params[:recipients].each do |recipient_email|
+      recipient = Recipient.initialize(user_id: user.id, email: recipient_email)
+      if !recipient.save
+        message = 'Failed to create recipients'
+        break
+      end
+    end
+
+    recipients = user.recipients.as_json(only: [:email, :id])
+    json = { recipients: recipients, message: message }
+    respond_to do |format|
+      format.html { render file: "#{Rails.root}/public/404", layout: false, status: :not_found }
+      format.json { render json: json }
+    end
+  end
 
   private
 
