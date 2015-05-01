@@ -59,6 +59,13 @@ var renderPagination = function (index, total) {
        </Swiper>
      </View>
      <Text style={styles.instruct}>Once you have made your selections... go ahead and share the love...</Text>
+    <View>
+     <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.submit}>
+       <TouchableHighlight onPress={this.submit}>
+         <Text style={styles.loginText}>SEND</Text>
+       </TouchableHighlight>
+     </LinearGradient>
+       </View>
      </LinearGradient>
    )
  }
@@ -98,6 +105,7 @@ var styles = StyleSheet.create({
   },
   wrapper: {
     position: 'relative',
+    flex: 1,
   },
   slide: {
     flex: 1,
@@ -105,6 +113,23 @@ var styles = StyleSheet.create({
     borderColor: '#192f6a',
     borderWidth: 20,
     position: 'relative',
+  },
+  loginText: {
+    fontSize: 15,
+    textAlign:'center',
+    color:'#FFFFFF',
+    fontFamily:'Avenir'
+  },
+  submit: {
+    position: 'relative',
+    bottom: 100,
+    paddingVertical: 1,
+    paddingHorizontal: 15,
+    borderRadius: 5,
+    borderWidth: 0.25,
+    borderColor:'#FFFFFF',
+    height: 25,
+    width: 100,
   },
   text: {
     color: '#fff',
