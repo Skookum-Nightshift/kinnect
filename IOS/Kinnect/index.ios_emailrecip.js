@@ -43,12 +43,20 @@ var Kinnect = React.createClass({
                   onChangeText={(text) => this.setState({input: text})}
                   />
                   </View>
+                  <View style={styles.email}>
+                    <View><Text style={styles.text}>Email 4</Text></View>
+                      <TextInput style={styles.input}
+                      onChangeText={(text) => this.setState({input: text})}
+                      />
+                      </View>
                 <View style={styles.buttons}>
                 <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.submit}>
                   <TouchableHighlight onPress={this.submit}>
                     <Text style={styles.loginText}>SEND</Text>
                   </TouchableHighlight>
                 </LinearGradient>
+                  </View>
+                  <View style={styles.buttons}>
                   <LinearGradient colors={['#ff4040','#cd3333', '#8b2323']} style={styles.submit}>
                     <TouchableHighlight onPress={this.reset}>
                       <Text style={styles.loginText}>RESET</Text>
@@ -95,16 +103,18 @@ var styles = StyleSheet.create({
   },
     buttons:{
       alignSelf: 'flex-end',
+      flex: 2,
       padding: 10,
       flex: 3,
       height: 5,
+      padding: 20,
   },
   input: {
     backgroundColor:'white',
     height: 40,
-    width: 300,
-    borderColor: 'white',
-    borderWidth: 0.3,
+    width: 275,
+    borderColor: '#192f6a',
+    borderWidth: 1,
     opacity: .25,
   },
   instruct: {
