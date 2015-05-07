@@ -11,15 +11,18 @@ var {
   Text,
   View,
   TouchableHighlight,
-  TextInput,
+  AsyncStorage
 } = React;
-
+var EmailRecipView = require('./components/email_recip_view');
+var Utils = require('./lib/utils');
 var LinearGradient = require('react-native-linear-gradient');
+
 var FacebookLoginManager = require('NativeModules').FacebookLoginManager;
 
 var Kinnect = React.createClass({
   getInitialState() {
     return {
+      loggedIn: false,
       result: 'Thanks for using Kinnect to share memories with your loved ones. Log into Facebook to get started'
     }
   },
@@ -28,12 +31,29 @@ var Kinnect = React.createClass({
       if (error) {
         this.setState({result: error});
       } else {
-        console.log(info);
-        this.setState({result: info});
+        var data = { id: info.id, expirationDate: info.expirationDate };
+        AsyncStorage.setItem("user", JSON.stringify(data))
+        .then(() => {
+          var data = { user: {} };
+          data.user.email =  info.userEmail;
+          data.user.name = info.userName;
+          data.user.token = info.token;
+          data.user.id = info.userId;
+
+          Utils.postRequest('users/sign_in', data, () => {
+            this.setState({loggedIn: true});
+          });
+        })
+        .catch((error) => { this.setState({result: "Error while loging in"}); })
+        .done();
       }
     });
   },
   render: function() {
+    if (this.state.loggedIn) {
+      return <EmailRecipView />;
+    }
+
     return (
       <LinearGradient colors={['#0ba0d3', '#0774b7', '#023692']} style={styles.container}>
         <View style={styles.box}>
