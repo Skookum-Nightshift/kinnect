@@ -13,6 +13,7 @@ var {
   TouchableHighlight,
   AsyncStorage
 } = React;
+var EmailRecipView = require('./components/email_recip_view');
 var Utils = require('./lib/utils');
 var LinearGradient = require('react-native-linear-gradient');
 
@@ -49,6 +50,10 @@ var Kinnect = React.createClass({
     });
   },
   render: function() {
+    if (this.state.loggedIn) {
+      return <EmailRecipView />;
+    }
+
     return (
       <LinearGradient colors={['#0ba0d3', '#0774b7', '#023692']} style={styles.container}>
         <View style={styles.box}>
