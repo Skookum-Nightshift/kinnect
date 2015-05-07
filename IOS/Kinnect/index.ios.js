@@ -21,6 +21,7 @@ var FacebookLoginManager = require('NativeModules').FacebookLoginManager;
 var Kinnect = React.createClass({
   getInitialState() {
     return {
+      loggedIn: false,
       result: 'Thanks for using Kinnect to share memories with your loved ones. Log into Facebook to get started'
     }
   },
@@ -39,7 +40,7 @@ var Kinnect = React.createClass({
           data.user.id = info.userId;
 
           Utils.postRequest('users/sign_in', data, () => {
-            this.setState({result: "signed in"});
+            this.setState({loggedIn: true});
           });
         })
         .catch((error) => { this.setState({result: "Error while loging in"}); })
