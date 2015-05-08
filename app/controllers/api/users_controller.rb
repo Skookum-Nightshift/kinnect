@@ -41,10 +41,47 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def get_photos
+    json = { message: "Search failed", status: "error" }
+    user = User.where(uuid: params[:uuid]).first
+    if user
+      @graph = Koala::Facebook::API.new(user.fb_token)
+      albums = @graph.get_connections("me", "albums")
+      photos = []
+      albums.each do |album|
+        photos.push(@graph.get_object("#{album['id']}/photos"))
+      end
+      json = photos.flatten.sort_by { |photo| DateTime.parse(photo["created_time"]) }
+      json = json.reverse!.first(10)
+    end
+
+    respond_to do |format|
+      format.html { render file: "#{Rails.root}/public/404", layout: false, status: :not_found }
+      format.json { render json: json }
+    end
+  end
+
+  def save_photos
+    user = User.where(uuid: params[:uuid]).first
+    json = { message: "Save failed", status: "error" }
+    binding.pry
+    if user
+      params[:photos].each do |photo|
+        user.photos.create(url: photo)
+      end
+      json = { message: "Save successfully", status: "OK" }
+    end
+
+    respond_to do |format|
+      format.html { render file: "#{Rails.root}/public/404", layout: false, status: :not_found }
+      format.json { render json: json }
+    end
+  end
+
   private
 
     def user_params
-      params.require(:user).permit([:id, :name, :token, :email])
+      params.require(:user).permit([:id, :name, :token, :email, :uuid])
     end
-
+    
 end

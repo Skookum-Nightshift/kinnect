@@ -19,6 +19,7 @@ gem "nested_form"
 # gem "omniauth-twitter"
 gem "rack-rewrite"
 gem "react-rails", github: "reactjs/react-rails", branch: "master"
+gem "koala"
 
 # REQUIRED #
 gem "rails", "4.2.0"
