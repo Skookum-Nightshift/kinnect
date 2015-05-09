@@ -1,4 +1,7 @@
+/* global require, module */
 'use strict';
+
+var request = require('superagent');
 
 function mapToURI(object, prevKey) {
   prevKey = prevKey || '';
@@ -16,38 +19,60 @@ function mapToURI(object, prevKey) {
   return formatedUri;
 }
 
-function urlForQuery(path, data) {
+function urlForNormalQuery(path, data) {
   var querystring = mapToURI(data);
   return `http://localhost:3000/api/v1/${path}.json?${querystring}`;
 }
 
+function urlForQuery(path) {
+  return `http://localhost:3000/api/v1/${path}.json?`;
+}
+
 function _executeRequest(method, path, data, callback, user) {
-  if (user && user.uuid.length > 0 && user.token.length > 0) {
-    data.uuid = user.uuid;
-    data.token = user.token;
+  if (user && user.id.length > 0 && user.token.length > 0) {
+    data.user = {};
+    data.user.id = user.id;
+    data.user.token = user.token;
   }
-  var request = new XMLHttpRequest();
-  request.onreadystatechange = () => {
-    if (request.readyState !== 4) {
-      return;
-    }
-    if (request.status === 200) {
-      callback(request.responseText);
-    } else {
-      console.warn('error');
-    }
-  };
 
-  request.open(method, urlForQuery(path, data));
-  request.send();
+  if (method === 'GET') {
+    var xmlRequest = new XMLHttpRequest();
+    xmlRequest.onreadystatechange = () => {
+      if (xmlRequest.readyState !== 4) {
+        return;
+      }
+      if (xmlRequest.status === 200) {
+        xmlRequest.text = xmlRequest.responseText;
+        callback(null, xmlRequest);
+      } else {
+        callback("error");
+      }
+    };
+
+    xmlRequest.open(method, urlForNormalQuery(path, data));
+    xmlRequest.send();
+  } else {
+    var query;
+    switch(method) {
+      case 'POST':
+        query = request.post(urlForQuery(path));
+        break;
+      case 'PUT':
+        query = request.put(urlForQuery(path));
+        break;
+      case 'DELETE':
+        query = request.delete(urlForQuery(path));
+        break;
+    }
+
+    query
+      .send(data)
+      .end(callback);
+  }
+
+
 }
 
-function _mergeObjects(obj1, obj2) {
-  var obj3 = {};
-  for (var attrname1 in obj1) { obj3[attrname1] = obj1[attrname1]; }
-  for (var attrname2 in obj2) { obj3[attrname2] = obj2[attrname2]; }
-  return obj3;
-}
 
 var Utils = {
   getRequest: _executeRequest.bind(null, 'GET'),
@@ -56,9 +81,7 @@ var Utils = {
 
   putRequest: _executeRequest.bind(null, 'PUT'),
 
-  deleteRequest: _executeRequest.bind(null, 'DELETE'),
-
-  mergeObjects: _mergeObjects.bind(null)
+  deleteRequest: _executeRequest.bind(null, 'DELETE')
 };
 
 module.exports = Utils;

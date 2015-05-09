@@ -23,18 +23,25 @@ class Api::UsersController < ApplicationController
   end
 
   def add_recipients
-    message = 'Recipients added successfully'
+    message = "Recipients added successfully"
+    state = "ok"
     user = User.where(uuid: user_params[:id]).first
-    params[:recipients].each do |recipient_email|
-      recipient = Recipient.initialize(user_id: user.id, email: recipient_email)
+    sucessful = []
+    params[:emails].each do |recipient_email|
+      recipient = Recipient.new(user_id: user.id, email: recipient_email)
       if !recipient.save
-        message = 'Failed to create recipients'
+        message = "Failed to create recipients"
+        state = "error"
+        sucessful.each do |delete_me|
+          delete_me.destroy!
+        end
         break
       end
+      sucessful.push(recipient)
     end
 
     recipients = user.recipients.as_json(only: [:email, :id])
-    json = { recipients: recipients, message: message }
+    json = { recipients: recipients, message: message, state: state }
     respond_to do |format|
       format.html { render file: "#{Rails.root}/public/404", layout: false, status: :not_found }
       format.json { render json: json }
@@ -43,7 +50,7 @@ class Api::UsersController < ApplicationController
 
   def get_photos
     json = { message: "Search failed", status: "error" }
-    user = User.where(uuid: params[:uuid]).first
+    user = User.where(uuid: user_params[:id]).first
     if user
       @graph = Koala::Facebook::API.new(user.fb_token)
       albums = @graph.get_connections("me", "albums")
@@ -62,7 +69,7 @@ class Api::UsersController < ApplicationController
   end
 
   def save_photos
-    user = User.where(uuid: params[:uuid]).first
+    user = User.where(uuid: user_params[:id]).first
     json = { message: "Save failed", status: "error" }
     binding.pry
     if user
@@ -83,5 +90,5 @@ class Api::UsersController < ApplicationController
     def user_params
       params.require(:user).permit([:id, :name, :token, :email, :uuid])
     end
-    
+
 end

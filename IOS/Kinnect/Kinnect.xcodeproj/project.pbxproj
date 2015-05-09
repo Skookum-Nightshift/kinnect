@@ -25,11 +25,12 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		7830A1F11AE2ADAF009BCDAE /* FacebookLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7830A1F01AE2ADAF009BCDAE /* FacebookLoginManager.m */; };
+		783C42161AFD87A30098CFE6 /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 783C42151AFD87990098CFE6 /* libBVLinearGradient.a */; };
+		783C421D1AFD892B0098CFE6 /* libRNModal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 783C421C1AFD89240098CFE6 /* libRNModal.a */; };
 		784E6B641AE1C6BD002B4F01 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784E6B611AE1C6BD002B4F01 /* Bolts.framework */; };
 		784E6B651AE1C6BD002B4F01 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784E6B621AE1C6BD002B4F01 /* FBSDKCoreKit.framework */; };
 		784E6B661AE1C6BD002B4F01 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784E6B631AE1C6BD002B4F01 /* FBSDKLoginKit.framework */; };
 		784E6B681AE1C6FA002B4F01 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784E6B671AE1C6FA002B4F01 /* FBSDKShareKit.framework */; };
-		78EBBD6C1AE7D4A90049D82C /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78EBBD611AE7D4490049D82C /* libBVLinearGradient.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 /* End PBXBuildFile section */
 
@@ -97,19 +98,26 @@
 			remoteGlobalIDString = 83CBBA2E1A601D0E00E9B192;
 			remoteInfo = React;
 		};
+		783C42141AFD87990098CFE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 783C42101AFD87990098CFE6 /* BVLinearGradient.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = BVLinearGradient;
+		};
+		783C421B1AFD89240098CFE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 783C42171AFD89240098CFE6 /* RNModal.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNModal;
+		};
 		78C398B81ACF4ADC00677621 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = RCTLinking;
-		};
-		78EBBD601AE7D4490049D82C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 78EBBD5C1AE7D4490049D82C /* BVLinearGradient.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 134814201AA4EA6300B7C361;
-			remoteInfo = BVLinearGradient;
 		};
 		832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -133,7 +141,6 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* KinnectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KinnectTests.m; sourceTree = "<group>"; };
 		09779F0B1AE562AF00146772 /* intro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = intro.png; path = ../../../../Kinnect/Proto/intro.png; sourceTree = "<group>"; };
-		09BB3F0D1AE6ACCE0011D92B /* BVLinearGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BVLinearGradient.h; path = "../../../../../node_modules/react-native-linear-gradient/BVLinearGradient.h"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* Kinnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kinnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = iOS/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = iOS/AppDelegate.m; sourceTree = "<group>"; };
@@ -144,12 +151,13 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		7830A1EF1AE2AD6E009BCDAE /* FacebookLoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookLoginManager.h; sourceTree = "<group>"; };
 		7830A1F01AE2ADAF009BCDAE /* FacebookLoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookLoginManager.m; sourceTree = "<group>"; };
+		783C42101AFD87990098CFE6 /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BVLinearGradient.xcodeproj; path = "node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; };
+		783C42171AFD89240098CFE6 /* RNModal.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNModal.xcodeproj; path = "node_modules/react-native-modal/RNModal.xcodeproj"; sourceTree = "<group>"; };
 		784E6B611AE1C6BD002B4F01 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		784E6B621AE1C6BD002B4F01 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		784E6B631AE1C6BD002B4F01 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		784E6B671AE1C6FA002B4F01 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
-		78EBBD5C1AE7D4490049D82C /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BVLinearGradient.xcodeproj; path = "node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,6 +173,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				783C421D1AFD892B0098CFE6 /* libRNModal.a in Frameworks */,
+				783C42161AFD87A30098CFE6 /* libBVLinearGradient.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				784E6B651AE1C6BD002B4F01 /* FBSDKCoreKit.framework in Frameworks */,
 				00481BE81AC0C86700671115 /* libRCTWebSocketDebugger.a in Frameworks */,
@@ -179,7 +189,6 @@
 				784E6B641AE1C6BD002B4F01 /* Bolts.framework in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
-				78EBBD6C1AE7D4A90049D82C /* libBVLinearGradient.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +293,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		783C42111AFD87990098CFE6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				783C42151AFD87990098CFE6 /* libBVLinearGradient.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		783C42181AFD89240098CFE6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				783C421C1AFD89240098CFE6 /* libRNModal.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		78C398B11ACF4ADC00677621 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,19 +317,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		78EBBD5D1AE7D4490049D82C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				78EBBD611AE7D4490049D82C /* libBVLinearGradient.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				78EBBD5C1AE7D4490049D82C /* BVLinearGradient.xcodeproj */,
-				09BB3F0D1AE6ACCE0011D92B /* BVLinearGradient.h */,
+				783C42171AFD89240098CFE6 /* RNModal.xcodeproj */,
+				783C42101AFD87990098CFE6 /* BVLinearGradient.xcodeproj */,
 				784E6B671AE1C6FA002B4F01 /* FBSDKShareKit.framework */,
 				784E6B611AE1C6BD002B4F01 /* Bolts.framework */,
 				784E6B621AE1C6BD002B4F01 /* FBSDKCoreKit.framework */,
@@ -418,8 +435,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 78EBBD5D1AE7D4490049D82C /* Products */;
-					ProjectRef = 78EBBD5C1AE7D4490049D82C /* BVLinearGradient.xcodeproj */;
+					ProductGroup = 783C42111AFD87990098CFE6 /* Products */;
+					ProjectRef = 783C42101AFD87990098CFE6 /* BVLinearGradient.xcodeproj */;
 				},
 				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
@@ -460,6 +477,10 @@
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+				},
+				{
+					ProductGroup = 783C42181AFD89240098CFE6 /* Products */;
+					ProjectRef = 783C42171AFD89240098CFE6 /* RNModal.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -527,18 +548,25 @@
 			remoteRef = 146834031AC3E56700842450 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		783C42151AFD87990098CFE6 /* libBVLinearGradient.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBVLinearGradient.a;
+			remoteRef = 783C42141AFD87990098CFE6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		783C421C1AFD89240098CFE6 /* libRNModal.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNModal.a;
+			remoteRef = 783C421B1AFD89240098CFE6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		78C398B91ACF4ADC00677621 /* libRCTLinking.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libRCTLinking.a;
 			remoteRef = 78C398B81ACF4ADC00677621 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		78EBBD611AE7D4490049D82C /* libBVLinearGradient.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libBVLinearGradient.a;
-			remoteRef = 78EBBD601AE7D4490049D82C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		832341B51AAA6A8300B99B32 /* libRCTText.a */ = {
