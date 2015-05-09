@@ -14,6 +14,7 @@ var {
   AsyncStorage
 } = React;
 
+var Icon = require('FAKIconImage');
 var EmailRecipientView = require('./components/email_recipient_view');
 var ImageSelectionView = require('./components/image_selection_view');
 var Utils = require('./lib/utils');
@@ -78,15 +79,15 @@ var Kinnect = React.createClass({
             KINNECT
           </Text>
           <Text style={styles.welcome}>
-            {JSON.stringify(this.state.result)}
+            {this.state.result}
           </Text>
           <TouchableOpacity onPress={this.login}>
-            <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']}
-              style={styles.login}>
-                <Text style={styles.loginText}>
-                  Login with Facebook
-                </Text>
-            </LinearGradient>
+            <View style={styles.login}>
+              <Icon name='fontawesome|facebook' style={styles.faIcon} size={30} color='#FFFFFF' />
+              <Text style={styles.loginText}>
+                Login with Facebook
+              </Text>
+            </View>
           </TouchableOpacity>
         </View>
       </LinearGradient>
@@ -95,20 +96,28 @@ var Kinnect = React.createClass({
 });
 
 var styles = StyleSheet.create({
+  faIcon: {
+    width: 30,
+    height: 35,
+    flex: 1,
+  },
   login: {
-    paddingVertical: 5,
+    paddingVertical: 10,
     paddingHorizontal: 15,
     borderRadius: 5,
     borderWidth: 0,
     borderColor:'#FFFFFF',
     alignSelf: 'center',
     alignItems: 'center',
-    height: 25,
+    height: 35,
     width: 200,
+    backgroundColor: '#023692',
     justifyContent: 'center',
     alignItems: 'center',
+    flexDirection: 'row',
   },
   loginText: {
+    flex: 9,
     fontSize: 15,
     textAlign:'center',
     color:'#FFFFFF',

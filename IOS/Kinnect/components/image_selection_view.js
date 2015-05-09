@@ -13,6 +13,7 @@ var {
   RenderPagination,
 } = React;
 
+var Icon = require('FAKIconImage');
 var Swiper = require('react-native-swiper');
 var LinearGradient = require('react-native-linear-gradient');
 var Utils = require('../lib/utils');
@@ -20,7 +21,8 @@ var Utils = require('../lib/utils');
 var ImageSelectionView = React.createClass({
   getInitialState() {
     return {
-      images: []
+      images: [],
+      selected: []
     }
   },
 
@@ -46,12 +48,30 @@ var ImageSelectionView = React.createClass({
     )
   },
 
+  toggleSelect(id) {
+    var selected = this.state.selected;
+    var index = selected.indexOf(id);
+    if ( index === -1) {
+      selected.push(id);
+    } else {
+      selected.splice(index, 1);
+    }
+
+    this.setState({selected: selected});
+  },
+
   render: function() {
     var slides = this.state.images.map((image) => {
-      console.log(image.source.replace('https', 'http'));
+      var name = 'fontawesome|circle-o';
+      if (this.state.selected.indexOf(image.id) !== -1) {
+        name = 'fontawesome|check-circle-o';
+      }
       return (
         <View style={styles.slide}>
           <Image style={styles.image} source={{ uri: image.source.replace('https', 'http') }} />
+          <TouchableOpacity onPress={this.toggleSelect.bind(this, image.id)}>
+            <Icon name={name} style={styles.checkbox} size={40} color='#FFFFFF' />
+          </TouchableOpacity>
         </View>
       );
     });
@@ -95,6 +115,13 @@ var ImageSelectionView = React.createClass({
 })
 
 var styles = StyleSheet.create({
+  checkbox: {
+    width: 40,
+    height: 40,
+    position: 'absolute',
+    right: 10,
+    top: 10,
+  },
   container: {
     flexDirection: 'column',
     justifyContent: 'flex-start',

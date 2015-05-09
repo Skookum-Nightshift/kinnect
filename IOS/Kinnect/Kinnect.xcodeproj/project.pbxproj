@@ -27,6 +27,11 @@
 		7830A1F11AE2ADAF009BCDAE /* FacebookLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7830A1F01AE2ADAF009BCDAE /* FacebookLoginManager.m */; };
 		783C42161AFD87A30098CFE6 /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 783C42151AFD87990098CFE6 /* libBVLinearGradient.a */; };
 		783C421D1AFD892B0098CFE6 /* libRNModal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 783C421C1AFD89240098CFE6 /* libRNModal.a */; };
+		783C42241AFDAD450098CFE6 /* libReactNativeIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 783C42231AFDAD250098CFE6 /* libReactNativeIcons.a */; };
+		783C422B1AFDAEC40098CFE6 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 783C42271AFDAEC40098CFE6 /* FontAwesome.otf */; };
+		783C422C1AFDAEC40098CFE6 /* foundation-icons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 783C42281AFDAEC40098CFE6 /* foundation-icons.ttf */; };
+		783C422D1AFDAEC40098CFE6 /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 783C42291AFDAEC40098CFE6 /* ionicons.ttf */; };
+		783C422E1AFDAEC40098CFE6 /* zocial-regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 783C422A1AFDAEC40098CFE6 /* zocial-regular-webfont.ttf */; };
 		784E6B641AE1C6BD002B4F01 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784E6B611AE1C6BD002B4F01 /* Bolts.framework */; };
 		784E6B651AE1C6BD002B4F01 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784E6B621AE1C6BD002B4F01 /* FBSDKCoreKit.framework */; };
 		784E6B661AE1C6BD002B4F01 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784E6B631AE1C6BD002B4F01 /* FBSDKLoginKit.framework */; };
@@ -112,6 +117,13 @@
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = RNModal;
 		};
+		783C42221AFDAD250098CFE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 783C421E1AFDAD250098CFE6 /* ReactNativeIcons.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2F5A3EB81ACDBF8000439386;
+			remoteInfo = ReactNativeIcons;
+		};
 		78C398B81ACF4ADC00677621 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */;
@@ -153,6 +165,11 @@
 		7830A1F01AE2ADAF009BCDAE /* FacebookLoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookLoginManager.m; sourceTree = "<group>"; };
 		783C42101AFD87990098CFE6 /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BVLinearGradient.xcodeproj; path = "node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; };
 		783C42171AFD89240098CFE6 /* RNModal.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNModal.xcodeproj; path = "node_modules/react-native-modal/RNModal.xcodeproj"; sourceTree = "<group>"; };
+		783C421E1AFDAD250098CFE6 /* ReactNativeIcons.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeIcons.xcodeproj; path = "node_modules/react-native-icons/ios/ReactNativeIcons.xcodeproj"; sourceTree = "<group>"; };
+		783C42271AFDAEC40098CFE6 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.otf; path = "node_modules/react-native-icons/ios/ReactNativeIcons/Libraries/FontAwesomeKit/FontAwesome.otf"; sourceTree = "<group>"; };
+		783C42281AFDAEC40098CFE6 /* foundation-icons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "foundation-icons.ttf"; path = "node_modules/react-native-icons/ios/ReactNativeIcons/Libraries/FontAwesomeKit/foundation-icons.ttf"; sourceTree = "<group>"; };
+		783C42291AFDAEC40098CFE6 /* ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ionicons.ttf; path = "node_modules/react-native-icons/ios/ReactNativeIcons/Libraries/FontAwesomeKit/ionicons.ttf"; sourceTree = "<group>"; };
+		783C422A1AFDAEC40098CFE6 /* zocial-regular-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "zocial-regular-webfont.ttf"; path = "node_modules/react-native-icons/ios/ReactNativeIcons/Libraries/FontAwesomeKit/zocial-regular-webfont.ttf"; sourceTree = "<group>"; };
 		784E6B611AE1C6BD002B4F01 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		784E6B621AE1C6BD002B4F01 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		784E6B631AE1C6BD002B4F01 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -173,6 +190,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				783C42241AFDAD450098CFE6 /* libReactNativeIcons.a in Frameworks */,
 				783C421D1AFD892B0098CFE6 /* libRNModal.a in Frameworks */,
 				783C42161AFD87A30098CFE6 /* libBVLinearGradient.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
@@ -309,6 +327,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		783C421F1AFDAD250098CFE6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				783C42231AFDAD250098CFE6 /* libReactNativeIcons.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		78C398B11ACF4ADC00677621 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -320,6 +346,11 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				783C42291AFDAEC40098CFE6 /* ionicons.ttf */,
+				783C422A1AFDAEC40098CFE6 /* zocial-regular-webfont.ttf */,
+				783C42271AFDAEC40098CFE6 /* FontAwesome.otf */,
+				783C42281AFDAEC40098CFE6 /* foundation-icons.ttf */,
+				783C421E1AFDAD250098CFE6 /* ReactNativeIcons.xcodeproj */,
 				783C42171AFD89240098CFE6 /* RNModal.xcodeproj */,
 				783C42101AFD87990098CFE6 /* BVLinearGradient.xcodeproj */,
 				784E6B671AE1C6FA002B4F01 /* FBSDKShareKit.framework */,
@@ -479,6 +510,10 @@
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
 				{
+					ProductGroup = 783C421F1AFDAD250098CFE6 /* Products */;
+					ProjectRef = 783C421E1AFDAD250098CFE6 /* ReactNativeIcons.xcodeproj */;
+				},
+				{
 					ProductGroup = 783C42181AFD89240098CFE6 /* Products */;
 					ProjectRef = 783C42171AFD89240098CFE6 /* RNModal.xcodeproj */;
 				},
@@ -562,6 +597,13 @@
 			remoteRef = 783C421B1AFD89240098CFE6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		783C42231AFDAD250098CFE6 /* libReactNativeIcons.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libReactNativeIcons.a;
+			remoteRef = 783C42221AFDAD250098CFE6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		78C398B91ACF4ADC00677621 /* libRCTLinking.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -591,6 +633,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				783C422B1AFDAEC40098CFE6 /* FontAwesome.otf in Resources */,
+				783C422C1AFDAEC40098CFE6 /* foundation-icons.ttf in Resources */,
+				783C422D1AFDAEC40098CFE6 /* ionicons.ttf in Resources */,
+				783C422E1AFDAEC40098CFE6 /* zocial-regular-webfont.ttf in Resources */,
 				09779F0C1AE562AF00146772 /* intro.png in Resources */,
 				008F07F31AC5B25A0029DE68 /* main.jsbundle in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
