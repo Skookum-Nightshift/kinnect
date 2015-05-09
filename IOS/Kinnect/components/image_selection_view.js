@@ -62,15 +62,15 @@ var ImageSelectionView = React.createClass({
 
   render: function() {
     var slides = this.state.images.map((image) => {
-      var name = 'fontawesome|circle-o';
+      var name = 'fontawesome|square-o';
       if (this.state.selected.indexOf(image.id) !== -1) {
-        name = 'fontawesome|check-circle-o';
+        name = 'fontawesome|check-square-o';
       }
       return (
         <View style={styles.slide}>
           <Image style={styles.image} source={{ uri: image.source.replace('https', 'http') }} />
           <TouchableOpacity onPress={this.toggleSelect.bind(this, image.id)}>
-            <Icon name={name} style={styles.checkbox} size={40} color='#FFFFFF' />
+            <Icon name={name} style={styles.checkbox} size={30} color='#0774b7' />
           </TouchableOpacity>
         </View>
       );
