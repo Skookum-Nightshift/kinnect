@@ -105,8 +105,6 @@ var styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 15,
     borderRadius: 5,
-    borderWidth: 0,
-    borderColor:'#FFFFFF',
     alignSelf: 'center',
     alignItems: 'center',
     height: 35,
@@ -130,6 +128,9 @@ var styles = StyleSheet.create({
     height: 75,
     alignSelf:'center',
     opacity: 100,
+    borderRadius: 15,
+    borderWidth: 1,
+    borderColor: '#3b5998',
   },
   container: {
     flex: 1,

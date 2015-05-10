@@ -70,7 +70,7 @@ var ImageSelectionView = React.createClass({
         <View style={styles.slide}>
           <Image style={styles.image} source={{ uri: image.source.replace('https', 'http') }} />
           <TouchableOpacity onPress={this.toggleSelect.bind(this, image.id)}>
-            <Icon name={name} style={styles.checkbox} size={30} color='#0774b7' />
+            <Icon name={name} style={styles.checkbox} size={40} color='#0774b7' />
           </TouchableOpacity>
         </View>
       );
@@ -97,7 +97,7 @@ var ImageSelectionView = React.createClass({
             </Text>
             <Image style={styles.img} source={{uri:this.props.uri}} />
           </View>
-          <View>
+          <View style={styles.swipper}>
           {swipper}
         </View>
         <Text style={styles.instruct}>
@@ -140,7 +140,7 @@ var styles = StyleSheet.create({
     padding: 25,
     borderRadius: 15,
     borderWidth: 0.5,
-    borderColor: 'white',
+    borderColor: '#3b5998',
   },
   instruct: {
     fontFamily: 'Avenir',
@@ -170,6 +170,15 @@ var styles = StyleSheet.create({
     height: 35,
     width: 100,
     backgroundColor: 'rgba(0,0,0,0)',
+  },
+  swipper:{
+    height: 242,
+    width: 375,
+    borderBottomWidth: 1,
+    borderBottomColor:'#3b5998',
+    borderTopWidth: 1,
+    borderTopColor:'#3b5998',
+    backgroundColor:'white',
   },
   text: {
     color: '#fff',

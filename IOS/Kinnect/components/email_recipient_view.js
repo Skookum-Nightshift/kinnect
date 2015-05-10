@@ -148,7 +148,7 @@ var styles = StyleSheet.create({
     opacity: 50,
     borderRadius: 15,
     borderWidth: 0.5,
-    borderColor: 'white',
+    borderColor: '#3b5998',
   },
   submit: {
     paddingVertical: 1,
