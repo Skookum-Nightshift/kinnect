@@ -5,6 +5,11 @@ class PagesController < ApplicationController
   def index
   end
 
+  def stream
+    user = User.find(params[:id])
+    @photos = user.photos
+  end
+
   def not_found
     respond_to do |format|
       format.html { render file: "#{Rails.root}/public/404", layout: false, status: :not_found }

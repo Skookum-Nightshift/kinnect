@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   devise_for :users
   get 'pages/index'
 
+  get '/stream/:name/:id', to: 'pages#stream', as: 'stream'
+
   get '*any', to: 'pages#not_found'
   root 'pages#index'
 end

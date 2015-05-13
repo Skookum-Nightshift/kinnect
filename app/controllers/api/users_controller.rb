@@ -71,10 +71,13 @@ class Api::UsersController < ApplicationController
   def save_photos
     user = User.where(uuid: user_params[:id]).first
     json = { message: "Save failed", status: "error" }
-    binding.pry
+
     if user
       params[:photos].each do |photo|
         user.photos.create(url: photo)
+      end
+      user.recipients.each do |recipient|
+        RecipientsMailer.stream_link(recipient.email, user).deliver_now
       end
       json = { message: "Save successfully", status: "OK" }
     end

@@ -5,9 +5,10 @@ class Recipients < ApplicationMailer
   #
   #   en.recipients.stream_link.subject
   #
-  def stream_link(eamil, sender, link)
-    @greeting = "Hi"
+  def stream_link(email, sender)
+    @link = stream_url(id: sender.id, name: sender_name.parameterize)
+    @sender_name = sender.name
 
-    mail to: eamil
+    mail to: email, subject: "New Kinnct update form #{@sender_name}"
   end
 end
