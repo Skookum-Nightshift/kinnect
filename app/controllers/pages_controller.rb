@@ -7,7 +7,7 @@ class PagesController < ApplicationController
 
   def stream
     user = User.find(params[:id])
-    @photos = user.photos
+    @photos = user.photos.reverse
   end
 
   def not_found
