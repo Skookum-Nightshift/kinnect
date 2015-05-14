@@ -16,13 +16,16 @@ var {
 var Icon = require('FAKIconImage');
 var Swiper = require('react-native-swiper');
 var LinearGradient = require('react-native-linear-gradient');
+var SendConfirm = require('./send_confirm');
 var Utils = require('../lib/utils');
+var _ = require('lodash');
 
 var ImageSelectionView = React.createClass({
   getInitialState() {
     return {
       images: [],
-      selected: []
+      selected: [],
+      sent: false
     }
   },
 
@@ -60,7 +63,29 @@ var ImageSelectionView = React.createClass({
     this.setState({selected: selected});
   },
 
+  submit() {
+    var photos = [];
+    var selectedIds =  this.state.selected;
+    for (var i = 0 ; i < selectedIds.length; i++) {
+      photos.push(_.findWhere(this.state.images, {id: selectedIds[i]}));
+    }
+
+    Utils.postRequest('users/save_photos', { photos: photos }, this.handleSaveImagesCallback, this.props.user);
+  },
+
+  handleSaveImagesCallback(err, res) {
+    if (!err) {
+      this.setState({sent: true});
+    }
+  },
+
   render: function() {
+    if (this.state.sent) {
+      return (
+        <SendConfirm />
+      );
+    }
+
     var slides = this.state.images.map((image) => {
       var name = 'fontawesome|square-o';
       if (this.state.selected.indexOf(image.id) !== -1) {

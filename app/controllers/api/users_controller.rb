@@ -77,7 +77,7 @@ class Api::UsersController < ApplicationController
         user.photos.create(url: photo)
       end
       user.recipients.each do |recipient|
-        RecipientsMailer.stream_link(recipient.email, user).deliver_now
+        RecipientMailer.stream_link(recipient.email, user).deliver_now
       end
       json = { message: "Save successfully", status: "OK" }
     end
