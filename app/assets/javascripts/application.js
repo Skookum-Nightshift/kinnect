@@ -9,3 +9,4 @@
 //= require react_ujs
 //= require components
 //= require pages
+//= require masonry.pkgd.min
