@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "Kiinect <images@kinnect.com>"
+  default from: "Kinnect <images@kinnect.com>"
   layout 'mailer'
 end
