@@ -1,10 +1,10 @@
 </div class="container">
   <div  class="header">
-    <img src="kin_mason.png" alt="Kinnect: Share Moving Memories" style="width:300px">
+    <img src="<%= asset_url('kin_mason.png') %>" alt="Kinnect: Share Moving Memories" style="width:300px">
   </div>
   <div="img-container">
     <% @photos.each do |photo| %>
-      <% image_tag photo.url, class: 'img' %>
+      <%= image_tag photo.url, class: 'img' %>
     <% end %>
   </div>
   </div>
