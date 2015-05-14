@@ -1,46 +1,32 @@
 .img {
-    background-color:#555555;
-    width: 25%;
+    width: 20%;
     border-radius: 5px;
-    position:relative;
+    position: relative;
 }
 
-.header{
-  border-radius: 5px;
+.header {
   background-color: #67d4ff;
-  height: 85px;
-  width:95%;
+  width: 100%;
   padding: 20px;
+  text-align: center;
 }
 
-.container{
-  width:95%;
-  border-radius: 5px;
-  position:"relative";
-  height: 100%;
+.img-container {
+  background-color: #FFF;
+  width: 100%;
+  position: relative;
+  padding: 10px;
 }
 
-.img-container{
-  background-color:"#FFF";
-  width:90%;
-  border-radius: 5px;
-  border-width: 3px;
-  border-color:"black";
-  position:"relative";
-  height: 100%;
-}
-
-.footer{
-  border-radius: 5px;
+.footer {
   background-color: #67d4ff;
-  height: 25;
-  width:95%;
+  width: 100%;
   padding: 20px;
 }
 
 .git {
   text-decoration: none;
-  
+
   &:visited {
     color: "#023692";
   }
