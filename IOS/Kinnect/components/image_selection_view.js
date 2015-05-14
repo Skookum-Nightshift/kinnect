@@ -67,7 +67,7 @@ var ImageSelectionView = React.createClass({
     var photos = [];
     var selectedIds =  this.state.selected;
     for (var i = 0 ; i < selectedIds.length; i++) {
-      photos.push(_.findWhere(this.state.images, {id: selectedIds[i]}));
+      photos.push(_.findWhere(this.state.images, {id: selectedIds[i]}).source);
     }
 
     Utils.postRequest('users/save_photos', { photos: photos }, this.handleSaveImagesCallback, this.props.user);

@@ -21,11 +21,11 @@ function mapToURI(object, prevKey) {
 
 function urlForNormalQuery(path, data) {
   var querystring = mapToURI(data);
-  return `http://localhost:3000/api/v1/${path}.json?${querystring}`;
+  return `https://kinnectapp.herokuapp.com/api/v1/${path}.json?${querystring}`;
 }
 
 function urlForQuery(path) {
-  return `http://localhost:3000/api/v1/${path}.json?`;
+  return `https://kinnectapp.herokuapp.com/api/v1/${path}.json?`;
 }
 
 function _executeRequest(method, path, data, callback, user) {
